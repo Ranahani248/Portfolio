@@ -351,8 +351,9 @@ footer {
         left: 0;
         width: 100%;
         background: #004d99; /* Deep blue */
+        padding: 20px 0;
     }
-
+    
     .nav-links.show {
         display: flex;
     }
