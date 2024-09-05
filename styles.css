@@ -1,0 +1,417 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f5f7f9; /* Light background for content */
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+header {
+    background: #004d99; /* Deep blue */
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover {
+    background: #003d7a; /* Slightly darker blue */
+    border-radius: 5px;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+}
+
+/* Home Section */
+#home {
+    position: relative;
+    background: url('home_bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.064); /* Light color with transparency for glass effect */
+    backdrop-filter: blur(10px); /* Adjust the blur amount */
+    z-index: 0; /* Ensure the pseudo-element is behind the text */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+#home > * {
+    position: relative;
+    z-index: 1; /* Ensure content is above the pseudo-element */
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Move elements down before they appear */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Final state when element is visible */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move elements back to original position */
+}
+.intro h1,
+.intro p {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.animated-btn {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s 0.5s forwards;
+    margin-top: 1.8vw;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-animate {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Button Hover Effect */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background: #007bff; /* Bright blue */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3; /* Darker blue */
+    transform: scale(1.05);
+}
+
+/* About Section */
+#about {
+    background: #e9f7fe; /* Light blue */
+}
+
+/* Centralize Section Headings */
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6 {
+    text-align: center;
+}
+
+/* Skills Section */
+#skills {
+    background: #fff;
+    padding: 80px 20px;
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 2vw;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill h3 {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+@keyframes load {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--progress-width);
+    }
+}
+
+.progress-bar {
+    background: #e0e0e0; /* Light gray background for the progress bar */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    height: 15px;
+    margin: 5px 0;
+}
+
+.progress {
+    background: #007bff; /* Bright blue for the progress indicator */
+    height: 100%;
+    width: 0; /* Initial width set to 0 */
+    transition: width 0.5s ease;
+    color: #fff;
+    text-align: center;
+    line-height: 15px; /* Align text vertically */
+    font-size: 0.9em;
+}
+
+.progress.animate {
+    animation: load 1.5s ease forwards; /* Apply the loading animation */
+}
+.progress[data-progress] {
+    --progress-width: attr(data-progress);
+}
+.progress-bar-container {
+    margin-top: 10px;
+}
+
+
+/* Projects Section */
+#projects {
+    background: #f5f7f9; /* Light background to match body */
+    padding: 80px 20px; /* Padding to give some space around the section */
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted min-width for better layout */
+    gap: 20px;
+    max-width: 1200px; /* Increased max-width for larger screens */
+    margin: auto;
+    margin-top: 2vw;
+}
+
+/* Project Card */
+.project-card {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Project Title */
+.project-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em; /* Slightly larger title */
+    color: #004d99; /* Deep blue color for titles */
+}
+
+/* Project Description */
+.project-card p {
+    color: #666; /* Darker text color for better readability */
+    line-height: 1.5; /* Improved line height for readability */
+}
+
+/* Contact Section */
+#contact {
+    background: #e9f7fe; /* Light blue */
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    margin-top: 1.8vw;
+    flex-direction: column;
+}
+
+.input-highlight {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.input-highlight:focus {
+    border-color: #007bff; /* Bright blue */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #004d99; /* Deep blue */
+    color: #fff;
+}
+
+/* Contact Section Icons */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vw;
+}
+
+.icon-link {
+    display: inline-block;
+    margin: 0 15px;
+    transition: transform 0.3s;
+}
+
+.icon-link img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.icon-link img:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: #004d99; /* Deep blue */
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .intro h1 {
+        font-size: 2.5em;
+    }
+
+    .intro p {
+        font-size: 1.2em;
+    }
+
+    .skills-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-item {
+        flex: 1 1 100%;
+        margin: 5px 0;
+    }
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Adjust columns for smaller screens */
+    }
+
+    .project-card h3 {
+        font-size: 1.2em; /* Smaller font size for titles on small screens */
+    }
+
+    .project-card p {
+        font-size: 0.9em; /* Smaller font size for descriptions on small screens */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 2em;
+    }
+
+    .intro p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column layout for very small screens */
+    }
+
+    .project-card {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+
+    .project-card h3 {
+        font-size: 1.1em; /* Smaller font size for titles */
+    }
+
+    .project-card p {
+        font-size: 0.8em; /* Smaller font size for descriptions */
+    }
+}

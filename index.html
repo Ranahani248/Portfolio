@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Hanan's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <header id="navbar">
+        <nav>
+            <div class="logo">Abdul Hanan</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="intro">
+            <h1 class="animated-text">Hi, I'm Abdul Hanan</h1>
+            <p class="animated-text">Android App Developer | Android Java Expert | Tech Enthusiast</p>
+            <a href="#contact" class="btn animated-btn">Hire Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="fade-in" style=" margin-right: 2vw; margin-left: 2vw; margin-top: 1.8vw; font-style: italic;  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            I am Abdul Hanan, an Android App Developer with over a year of experience specializing in Java. I hold a degree in BSIT from VU and am dedicated to crafting efficient, user-friendly applications. My expertise spans a range of technologies, and I am passionate about leveraging my skills to solve complex problems and enhance user experiences. Fluent in both English and Urdu, I am adept at collaborating with diverse teams and delivering high-quality solutions.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <h4>Android Development</h4>
+                <div class="progress-bar">
+                    <div class="progress" data-progress="80%"></div>
+                </div>
+            </div>
+            <div class="skill fade-in">
+                <h4>Java Programming</h4>
+                <div class="progress-bar">
+                    <div class="progress" data-progress="70%"></div>
+                </div>
+            </div>
+            <div class="skill fade-in">
+                <h4>UI/UX Design</h4>
+                <div class="progress-bar">
+                    <div class="progress" data-progress="75%"></div>
+                </div>
+            </div>
+            <div class="skill fade-in">
+                <h4>Version Control (Git)</h4>  
+                <div class="progress-bar">
+                    <div class="progress" data-progress="73%"></div>
+                </div>
+            </div>
+            <div class="skill fade-in">
+                <h4>API Integration</h4>
+                <div class="progress-bar">
+                    <div class="progress" data-progress="70%"></div>
+                </div>
+            </div>
+            <div class="skill fade-in">
+                <h4>Problem Solving</h4>
+                <div class="progress-bar">
+                    <div class="progress" data-progress="85%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid fade-in">
+            <div class="project-card expand-on-hover">
+                <h3>Resumor - Cv maker</h3>
+                <p>Resume and Cover letters making app by using RESTAPIs. </p>
+            </div>
+            <div class="project-card expand-on-hover">
+                <h3>Document Scanner</h3>
+                <p>Document Scanner through camera and generating shareable word and pdf files.</p>
+            </div>
+            <div class="project-card expand-on-hover">
+                <h3>Android Campus Recruitment System</h3>
+                <p>Final Year Project in BS. Recruitment App using firebase. </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <form id="contact-form" class="fade-in" 
+         action="https://formspree.io/f/mwpezqqw"
+        method="POST">
+            <input name="name" type="text" id="name" placeholder="Your Name" class="input-highlight" required>
+            <input name= "email" type="email" id="email" placeholder="Your Email" class="input-highlight" required>
+            <textarea name="message" id="message" placeholder="Your Message" class="input-highlight" required></textarea>
+            <button type="submit" class="btn submit-btn">Send Message</button>
+        </form>
+        <div class="contact-icons fade-in" >
+            <a href="mailto:ranaabdulhanan123@gmail.com" class="icon-link" title="Email"><img src="gmail.png" alt="Gmail"></a>
+            <a href="https://www.linkedin.com/in/hani-rana" class="icon-link" title="LinkedIn" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/Ranahani248" class="icon-link" title="GitHub" target="_blank"><img src="github-sign.png" alt="GitHub"></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Abdul Hanan. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
