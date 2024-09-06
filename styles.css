@@ -168,7 +168,69 @@ section h5,
 section h6 {
     text-align: center;
 }
+/* Timeline Section */
+#timeline {
+    background: #f5f7f9;
+    padding: 80px 20px;
+}
 
+.timeline-container {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    margin-top: 2vw;
+}
+
+.timeline-item {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.timeline-date {
+    font-size: 0.9em;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.timeline-item h3 {
+    margin-bottom: 5px;
+    color: #004d99;
+}
+
+.timeline-item h4 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.timeline-item p {
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Interactive fade-in effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
 /* Skills Section */
 #skills {
     background: #fff;
@@ -365,6 +427,14 @@ footer {
     .intro p {
         font-size: 1.2em;
     }
+    .timeline-container {
+        padding: 0 10px;
+    }
+
+    .timeline-item {
+        padding: 15px;
+    }
+
 
     .skills-list {
         flex-direction: column;
@@ -386,8 +456,8 @@ footer {
     .project-card p {
         font-size: 0.9em; /* Smaller font size for descriptions on small screens */
     }
-}
 
+}
 
 @media (max-width: 480px) {
     .intro h1 {
@@ -402,7 +472,13 @@ footer {
         padding: 8px 16px;
         font-size: 0.9em;
     }
+    .timeline-item h3 {
+        font-size: 1.2em;
+    }
 
+    .timeline-item p {
+        font-size: 0.9em;
+    }
     .section-title {
         font-size: 1.5em;
     }
